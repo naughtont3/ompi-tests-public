@@ -106,10 +106,10 @@ int do_del_error_code(MPI_Comm comm, int eclass, int ecode, char *estr)
     newlast = get_lastused(MPI_COMM_WORLD);
 
     if (newlast < last) {
-        printf("TEST: Success reomved error code (oldlast=%d, newlast=%d)\n", last, newlast);
+        printf("TEST: Success removed error code (oldlast=%d, newlast=%d)\n", last, newlast);
         ret = SUCCESS;
     } else {
-        printf("Error: MPI_Remove_error_xxx failed LastUsedCode not decreased (last=%d, new=%d)\n", last, newlast);
+        printf("Error: MPI_Remove_error_code failed LastUsedCode not decreased (last=%d, new=%d)\n", last, newlast);
         ret = FAILURE;
     }
 
@@ -135,10 +135,10 @@ int do_del_error_class(MPI_Comm comm, int eclass, int ecode, char *estr)
     newlast = get_lastused(MPI_COMM_WORLD);
 
     if (newlast < last) {
-        printf("TEST: Success reomved error class (oldlast=%d, newlast=%d)\n", last, newlast);
+        printf("TEST: Success removed error class (oldlast=%d, newlast=%d)\n", last, newlast);
         ret = SUCCESS;
     } else {
-        printf("Error: MPI_Remove_error_xxx failed LastUsedCode not decreased (last=%d, new=%d)\n", last, newlast);
+        printf("Error: MPI_Remove_error_class failed LastUsedCode not decreased (last=%d, new=%d)\n", last, newlast);
         ret = FAILURE;
     }
 
