@@ -86,7 +86,7 @@ int do_del_error_string(MPI_Comm comm, int eclass, int ecode, char *estr)
     CHECK_RC( MPI_Remove_error_string(ecode), "MPI_Remove_error_string");
 #else
     /* We should have MPI_Remove_error_xxx with MPI >= 4.1 */
-    printf("Warning: MPI_Remove_error_xxx code/class/string NOT available!\n");
+    printf("Warning: MPI_Remove_error_string NOT available!\n");
     ret = SKIPTEST;
 #endif /* HAVE_MPI_REMOVE_ERROR_CODE */
 
@@ -115,7 +115,7 @@ int do_del_error_code(MPI_Comm comm, int eclass, int ecode, char *estr)
 
 #else
     /* We should have MPI_Remove_error_xxx with MPI >= 4.1 */
-    printf("Warning: MPI_Remove_error_xxx code/class/string NOT available!\n");
+    printf("Warning: MPI_Remove_error_code NOT available!\n");
     ret = SKIPTEST;
 #endif /* HAVE_MPI_REMOVE_ERROR_CODE */
 
@@ -144,7 +144,7 @@ int do_del_error_class(MPI_Comm comm, int eclass, int ecode, char *estr)
 
 #else
     /* We should have MPI_Remove_error_xxx with MPI >= 4.1 */
-    printf("Warning: MPI_Remove_error_xxx code/class/string NOT available!\n");
+    printf("Warning: MPI_Remove_error_class NOT available!\n");
     ret = SKIPTEST;
 #endif /* HAVE_MPI_REMOVE_ERROR_CODE */
 

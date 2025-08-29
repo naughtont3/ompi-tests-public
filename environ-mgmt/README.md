@@ -3,7 +3,7 @@ Environ Management Tests
 
 Tests for items in the "MPI Environmental Management" chapter.
 
-These are begin created in the ompi-tests-public repository
+These are being created in the ompi-tests-public repository
 to ensure they are easy to access.
 
 Using autotools to detect if we have the MPI-4.1 remove error code
