@@ -67,6 +67,11 @@ CFLAGS_save=$CFLAGS
 AC_PROG_CC
 CFLAGS=$CFLAGS_save
 
+FFLAGS_save=$FFLAGS
+AC_PROG_FC
+FFLAGS=$FFLAGS_save
+
+
 dnl
 dnl Because these are meant to be used for debugging, after all
 dnl

@@ -25,6 +25,13 @@ Usage
      mpirun -np 1 ./src/test_add_del_err_codes
    ```
 
+ - (Fortran) Build/Run
+   ```
+     ./autogen.sh && ./configure FC=mpifort && make
+     mpirun -np 1 ./src/test_add_err_codes_usempi
+     mpirun -np 1 ./src/test_add_err_codes_usempif08
+   ```
+
 Example Output
 --------------
 
