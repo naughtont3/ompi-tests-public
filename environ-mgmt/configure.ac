@@ -67,6 +67,18 @@ CFLAGS_save=$CFLAGS
 AC_PROG_CC
 CFLAGS=$CFLAGS_save
 
+dnl
+dnl Fortran compiler - prefer mpifort if available
+dnl
+
+if test "$FC" = ""; then
+    AC_CHECK_PROG(HAVE_MPIFORT, mpifort, yes, no)
+    if test "$HAVE_MPIFORT" = "yes"; then
+        FC=mpifort
+        export FC
+    fi
+fi
+
 FFLAGS_save=$FFLAGS
 AC_PROG_FC
 FFLAGS=$FFLAGS_save
