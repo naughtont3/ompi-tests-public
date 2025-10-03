@@ -11,6 +11,8 @@
  *  - example from Lisandro Dalcin
  *    https://www.open-mpi.org/community/lists/devel/2014/04/14578.php
  */
+#include "config.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 

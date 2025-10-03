@@ -128,12 +128,22 @@ AC_CHECK_LIB([mpi], [MPI_Remove_error_string],
 
 AC_SUBST([MPI_LIBS])
 
+dnl
+dnl Check for pthreads support
+dnl
+
+AC_SEARCH_LIBS([pthread_create], [pthread], [have_pthread=yes], [have_pthread=no])
+if test "$have_pthread" = "yes"; then
+    AC_DEFINE([HAVE_PTHREAD], [1], [Define if have pthreads])
+fi
+
 AC_LANG_POP([C])
 
 dnl
 dnl Party on
 dnl
 
+AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([
     Makefile
     src/Makefile
