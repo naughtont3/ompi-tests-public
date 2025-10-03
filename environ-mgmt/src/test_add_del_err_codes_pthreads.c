@@ -77,10 +77,15 @@ void *thread_func(void *arg)
 int main(int argc, char **argv)
 {
     int rank, size;
+    int provided;
 
-    MPI_Init(&argc, &argv);
+    MPI_Init_thread(&argc, &argv, MPI_THREAD_MULTIPLE, &provided);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
+
+    if (provided < MPI_THREAD_MULTIPLE) {
+        printf("Warning: MPI does not provide MPI_THREAD_MULTIPLE support\n");
+    }
 
     if (rank == 0) {
         printf("MPI initialized with %d processes\n", size);
