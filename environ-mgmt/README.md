@@ -23,6 +23,7 @@ Usage
 
    ```
      mpirun -np 1 ./src/test_add_del_err_codes
+     mpirun -np 1 ./src/test_add_del_err_codes_pthreads
    ```
 
  - (Fortran) Build/Run
@@ -31,6 +32,21 @@ Usage
      mpirun -np 1 ./src/test_add_err_codes_usempi
      mpirun -np 1 ./src/test_add_err_codes_usempif08
    ```
+
+Tests
+-----
+
+### test_add_del_err_codes
+Basic C test for `MPI_Add_error_class/code/string` and `MPI_Remove_error_class/code/string` functionality.
+
+### test_add_del_err_codes_pthreads
+Multi-threaded stress test using pthreads to verify thread-safety of error code management APIs. Creates 10 concurrent threads that each add and remove error classes, codes, and strings with random sleep intervals to stress concurrent operations. Requires `MPI_THREAD_MULTIPLE` and pthread support.
+
+### test_add_err_codes_usempi
+Fortran test using `use mpi` interface.
+
+### test_add_err_codes_usempif08
+Fortran test using `use mpi_f08` interface.
 
 Example Output
 --------------
